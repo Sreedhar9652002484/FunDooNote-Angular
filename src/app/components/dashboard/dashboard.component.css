@@ -1,0 +1,99 @@
+.dashboard {
+    background-color: white;
+    position: fixed;
+    inset: 0;
+    /* shorthand for top, right, bottom, left set to 0 */
+
+}
+
+.toolbar {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.144);
+}
+
+.toolbar-icons {
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+}
+.toolbar-icons-left{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(43, 42, 42, 0.683);
+    font-size: 1.5rem;
+}
+.search-container {
+    width: 40%;
+    margin: 0 auto;
+}
+.search-bar{
+    border-radius:5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.185);
+}
+.mat-icon {
+    font-family: 'Material Icons', sans-serif;
+}
+.sidenav {
+    width: 18%;
+    height: 89vh;
+    border: none;
+    border-color: aqua;
+}
+
+.sidenav-content {
+    height: 82vh;
+    width: 90%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+.sidenav-content::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.favorite-icon {
+    display: flex;
+    align-items: center;
+}
+
+.nav-text {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+}
+
+.takenote-icons{
+    display: flex;
+
+}
+.takenote-icons2{
+    display: flex;
+}
+.takenote-input {
+    width: 100%;
+    outline: none; 
+    font-size: 1rem;
+    border: none;
+  }
+  .takenote-input:focus {
+    border: none; 
+  }
+.material-symbols-outlined{
+    color: gray;
+}
+.selected{
+    background-color: #feefc3;
+}
+

@@ -1,0 +1,89 @@
+<div style="display: flex; justify-content: space-between; width: 100%;">
+    <div class="takenote-icons2">
+      <ng-container *ngIf="!trash">
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      matTooltip="Remind me"
+
+      >
+        <span class="material-symbols-outlined">add_alert</span>
+      </button>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      matTooltip="Collaborator"
+
+      >
+        <span class="material-symbols-outlined">person_add</span>
+      </button>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      [matMenuTriggerFor]="paletteMenu"
+      matTooltip="Add Colour"
+
+      >
+        <span class="material-symbols-outlined">palette</span>
+      </button>
+      <mat-menu #paletteMenu="matMenu" class="palette-menu">
+        <div class="color-icons">
+          <button *ngFor="let colors of colorArray"
+                  class="colorIcon"
+                  [style.background]="colors.code"
+                  (click)="selectColor(colors.code)"
+                  matTooltip="{{colors.name}}">
+          </button>
+        </div>
+      </mat-menu>
+      
+        <!-- Hidden File Input -->
+<input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)" />
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      matTooltip="Add image"
+      (click)="fileInput.click()">
+        <span class="material-symbols-outlined">image</span>
+      </button>
+      <ng-container *ngIf="!archive">
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      (click)="onArchive()"
+      matTooltip="Archive"
+      >
+        <span class="material-symbols-outlined">archive</span>
+      </button>
+</ng-container>
+      <ng-container *ngIf="archive">
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      (click)="unArchive()"
+      matTooltip="Un Archive"
+      >
+        <span class="material-symbols-outlined">unarchive</span>
+      </button>
+      </ng-container>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with more options"
+      matTooltip="More"
+
+      [matMenuTriggerFor]="menu"
+      >
+      <span class="material-symbols-outlined">more_vert</span>
+    </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item  (click)="onTrash()" >Trash</button>
+        <button mat-menu-item>Add Label</button>
+      </mat-menu>
+    </ng-container>
+    <ng-container *ngIf="trash">
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      (click)="onDelete()"
+      matTooltip="Delete Forever"
+
+      >
+        <span class="material-symbols-outlined">delete_forever</span>
+      </button>
+
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      (click)="unTrash()"
+      matTooltip="Restore"
+      >
+        <span class="material-symbols-outlined">restore_from_trash</span>
+      </button>
+
+    </ng-container>
+
+
+    </div>
+  </div>

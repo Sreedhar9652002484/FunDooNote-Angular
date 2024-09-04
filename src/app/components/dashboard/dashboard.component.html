@@ -1,0 +1,158 @@
+<div class="dashboard">
+    <mat-toolbar class="toolbar">
+        <div class="toolbar-icons-left">
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+                (click)="sidenav.toggle()" (click)="sidenavToggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <img [src]="'assets/images/keepicon.png'" width="40vh">
+            <span>Fundoo Note</span>
+        </div>
+        <div class="search-container">
+            <div class="search-bar">
+                <div style="display: flex; width: 100%;">
+                    <button mat-icon-button class="example-icon favorite-icon1"
+                        aria-label="Example icon-button with heart icon">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
+                    <input placeholder="Search" class="takenote-input" (keyup)="Search($event)" #searchInput >
+                    <button mat-icon-button class="example-icon favorite-icon1"
+                        aria-label="Example icon-button with heart icon" (click)="ClearSearch()" >
+                        <span class="material-symbols-outlined">
+                            clear
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="toolbar-icons">
+            <div>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon1"
+                    aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">
+                        refresh
+                    </span>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <span class="material-symbols-outlined">
+                        settings
+                    </span>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <span class="material-symbols-outlined">
+                        grid_view
+                    </span>
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon favorite-icon1"
+                    aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">
+                        apps
+                    </span>
+                </button>
+                <button mat-icon-button class="example-icon favorite-icon1"
+                    aria-label="Example icon-button with heart icon"  [matMenuTriggerFor]="menu">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item  (click)="Logout()" >Logout</button>
+                  <button mat-menu-item>Profile</button>
+                </mat-menu>
+            </div>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container style="background-color: white;">
+        <mat-sidenav #sidenav mode="side" opened="false" class="sidenav">
+            <ng-container *ngIf="toggle; then iconsclose else iconsopen"></ng-container>
+              <ng-template #iconsclose >
+                <mat-nav-list>
+                <a mat-list-item>
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">lightbulb</span>
+                  </button>
+                </a>
+                <a mat-list-item>
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">notifications</span>
+                  </button>
+                </a>
+                <a mat-list-item>
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">edit</span>
+                  </button>
+                </a>
+                <a mat-list-item>
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">archive</span>
+                  </button>
+                </a>
+                <a mat-list-item>
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">trash</span>
+                  </button>
+                </a>
+            </mat-nav-list>
+              </ng-template>
+          
+            <ng-template #iconsopen>
+              <mat-nav-list>
+                <a mat-list-item [ngClass]="{'selected': selectedItem === 'notes'}" (click)="selectItem('notes') "
+                  style="border-radius: 0px 22px 22px 0px;">
+                  <div class="nav-list-items">
+                    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+                    >
+                      <span class="material-symbols-outlined">lightbulb</span>
+                      <span class="nav-text">Notes</span>
+                    </button>
+                  </div>
+                </a>
+                <a mat-list-item [ngClass]="{'selected': selectedItem === 'remainders'}" (click)="selectItem('remainders')"
+                  style="border-radius: 0px 22px 22px 0px;">
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="nav-text">Reminders</span>
+                  </button>
+                </a>
+                <a mat-list-item [ngClass]="{'selected': selectedItem === 'labels'}" (click)="selectItem('labels')"
+                  style="border-radius: 0px 22px 22px 0px;">
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">edit</span>
+                    <span class="nav-text">Edit labels</span>
+                  </button>
+                </a>
+                <a mat-list-item [ngClass]="{'selected': selectedItem === 'archive'}" (click)="selectItem('archive')"
+                  style="border-radius: 0px 22px 22px 0px;">
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+                  >
+                    <span class="material-symbols-outlined">archive</span>
+                    <span class="nav-text">Archive</span>
+                  </button>
+                </a>
+                <a mat-list-item [ngClass]="{'selected': selectedItem === 'trash'}" (click)="selectItem('trash')"
+                  style="border-radius: 0px 22px 22px 0px;">
+                  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <span class="material-symbols-outlined">delete</span>
+                    <span class="nav-text">Trash</span>
+                  </button>
+                </a>
+              </mat-nav-list>
+            </ng-template>
+          </mat-sidenav>
+          
+        <!-- The main content -->
+        <mat-sidenav-content class="sidenav-content">
+              <router-outlet></router-outlet>  <!-- Add this to render child routes -->
+
+            <!-- <app-create-notes></app-create-notes>
+            <div class="get-all-notes" *ngIf="notes.length>0;">
+                <app-getall-notes *ngFor="let note of notes" [note]="note" ></app-getall-notes>
+            </div> -->
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,67 @@
+<div class="notes-container">
+
+  <!-- Pinned Notes Section -->
+  <div *ngFor="let notes of notesList | filter: filterNote" class="card" >
+    <mat-card class="allnotes" [ngStyle]="{'background-color': notes.colour}">
+      <img [src]="notes.image" style="width: 100%;">
+      <div style="display: flex; width: 100%; justify-content: space-between;">
+        <mat-card-title mat-input class="title" (click)="editNoteDialogBox(notes)">
+          {{notes.title}}
+        </mat-card-title>
+        <p class="material-symbols-outlined icons-container"  (click)="onPin(notes.notesId)" matTooltip="Unpin">keep</p>
+      </div>
+      <mat-card-content (click)="editNoteDialogBox(notes)">
+        <div role="textbox" class="text" style="min-height: 40px; display: block; overflow-wrap: break-word;">
+          {{notes.takeaNote}}
+        </div>
+      </mat-card-content>
+      <div>
+        <div class="icons-container">
+        <app-icons-component 
+          [notesId]="notes.notesId" 
+          [trash]="notes.isTrash" 
+          [archive]="notes.isArchive"
+          (refrehArchiveEvent)="handleArchive($event)"
+          (refrehTrashEvent)="handleTrash($event)"
+          (refreshDeleteEvent)="handleDelete($event)"
+          (refreshColorEvent)="handleColorChange($event)"
+          (refreshunArchiveEvent)="handleunArchive($event)"
+          (refreshUnTrashEvent)="handleUnTrash($event)"
+          (refreshImageEvent)="handleImage($event)">
+        </app-icons-component>
+      </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Unpinned Notes Section -->
+  <!-- <div *ngFor="let notes of unPinnedNotes | filter: filterNote" class="card">
+    <mat-card class="allnotes" [ngStyle]="{'background-color': notes.colour}">
+      <div style="display: flex; width: 100%; justify-content: space-between;">
+        <mat-card-title mat-input class="title" (click)="editNoteDialogBox(notes)">
+          {{notes.title}}
+        </mat-card-title>
+        <p class="material-symbols-outlined" (click)="onPin(notes.notesId)" matTooltip="Pin">keep</p>
+      </div>
+      <mat-card-content (click)="editNoteDialogBox(notes)">
+        <div role="textbox" class="text" style="min-height: 40px; display: block; overflow-wrap: break-word;">
+          {{notes.takeaNote}}
+        </div>
+      </mat-card-content>
+      <div>
+        <app-icons-component 
+          [notesId]="notes.notesId" 
+          [trash]="notes.isTrash" 
+          [archive]="notes.isArchive"
+          (refrehArchiveEvent)="handleArchive($event)"
+          (refrehTrashEvent)="handleTrash($event)"
+          (refreshDeleteEvent)="handleDelete($event)"
+          (refreshColorEvent)="handleColorChange($event)"
+          (refreshunArchiveEvent)="handleunArchive($event)"
+          (refreshUnTrashEvent)="handleUnTrash($event)">
+        </app-icons-component>
+      </div>
+    </mat-card>
+  </div>
+
+</div> -->

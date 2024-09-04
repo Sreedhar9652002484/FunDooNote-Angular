@@ -1,0 +1,63 @@
+.sidenav-content-notescontainer{
+    width: 40vw;
+    padding: 2%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.favorite-icon {
+    display: flex;
+    align-items: center;
+}
+.nav-text {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+}
+.takenote-card {
+    width: 100%;
+    height: 8%;
+    padding-left: 2%;
+    border-radius:5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.258);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 1px solid rgba(0, 0, 0, 0.189);
+    font-size: 1rem;
+
+}
+.takenote-icons{
+    display: flex;
+}
+.takenote-card2 {
+    width: 100%;
+    height: auto;
+    padding: 1%;
+    border-radius:5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.258); 
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    border: 1px solid rgba(0, 0, 0, 0.189);
+}
+.takenote-icons2{
+    display: flex;
+}
+.takenote-input {
+    width: 100%;
+    outline: none; 
+    font-size: 1rem;
+    border: none;
+    resize: vertical;
+    overflow-y: hidden;
+  }
+  
+  .takenote-input:focus {
+    border: none; 
+  }
+
+  .material-symbols-outlined{
+    color: gray;
+}

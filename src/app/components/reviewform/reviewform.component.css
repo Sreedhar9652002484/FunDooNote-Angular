@@ -1,0 +1,35 @@
+.registartion-form{
+    position: fixed;
+    inset: 0; /* shorthand for top, right, bottom, left set to 0 */
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-elements{
+    width: 37%;
+    height: 80%;
+    background-color: white;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 73%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.form-elements1{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input-fields{
+    display: flex;
+    justify-content: space-between;
+}
+

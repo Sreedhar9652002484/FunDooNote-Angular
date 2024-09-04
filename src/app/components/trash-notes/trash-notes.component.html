@@ -1,0 +1,17 @@
+
+<ng-container  *ngIf="notesArray.length>0" >
+<h3 style="text-align: center;"><em>Notes in Trash are deleted after 7 days.</em>
+    <span><button mat-button color="primary">Empty Trash</button></span>
+</h3>
+</ng-container>
+<ng-container  *ngIf="notesArray.length<=0">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+    <p class="material-symbols-outlined" style="font-size: 8rem; color: rgba(128, 128, 128, 0.313);">delete</p>
+    <p style="font-size: 1.5rem; color: rgba(128, 128, 128, 0.475);"> No notes in Trash</p>
+    </div>
+</ng-container>
+
+<app-getall-notes [notesList]="notesArray" (refreshNotes)="refreshNotes()" ></app-getall-notes>
+
+

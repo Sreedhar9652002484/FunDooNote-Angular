@@ -1,0 +1,52 @@
+.takenote-card2 {
+    height: auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .takenote-card2:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .takenote-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 8px 0;
+    color: #333;
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+  }
+  
+  .takenote-input::placeholder {
+    color: #888;
+  }
+  
+  .mat-card-title {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .example-icon {
+    color: #5f6368;
+    margin-right: 8px;
+  }
+  
+  .example-icon:hover {
+    color: #202124;
+  }
+  
+  .favorite-icon1 {
+    margin-left: auto;
+  }
+  
+ 
+  

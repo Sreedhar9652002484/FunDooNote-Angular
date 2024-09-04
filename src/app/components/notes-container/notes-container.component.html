@@ -1,0 +1,8 @@
+
+<div class="notes-container">
+<app-create-notes (refreshAddNoteEvent)="addNoteEvent($event)"  ></app-create-notes>
+<div class="get-all-notes">
+    
+<app-getall-notes [notesList]="notesArray" (refreshNotes)="refreshNotes()"></app-getall-notes>
+</div>
+</div>

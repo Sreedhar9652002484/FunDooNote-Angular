@@ -1,0 +1,52 @@
+<div class="sidenav-content-notescontainer" >
+    <!-- Using ngIf with then/else syntax -->
+    <ng-container *ngIf="toggle; then takenotes else inputnotes"></ng-container>
+    <!-- Template for the "Take a note..." view -->
+    <ng-template #takenotes>
+      <div class="takenote-card" (click)="toggleView()">
+          <p>Take a note...</p>
+        <div class="takenote-icons">
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <span class="material-symbols-outlined">check_box</span>
+          </button>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <span class="material-symbols-outlined">brush</span>
+          </button>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <span class="material-symbols-outlined">image</span>
+          </button>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Template for the expanded note input view -->
+    <ng-template #inputnotes>
+      <div class="takenote-card2">
+        <form  [formGroup]="noteTaking" >
+        <div style="display: flex; width: 100%;">
+          <input placeholder="Title" class="takenote-input" formControlName="title" >
+          <button mat-icon-button class="example-icon favorite-icon1" aria-label="Example icon-button with heart icon">
+            <span class="material-symbols-outlined">keep</span>
+          </button>
+        </div>
+        <div style="width: 100%;">
+          <textarea placeholder="Take a note..." class="takenote-input" formControlName="takeanote" aria-multiline="true"
+          (input)="onTextareaInput($event)"
+
+          ></textarea>
+        </div>
+        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; ">
+        <div style="display: flex;">
+        <app-icons-component    ></app-icons-component>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <span class="material-symbols-outlined">undo</span>
+          </button>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <span class="material-symbols-outlined">redo</span>
+          </button>
+        </div>
+        <button mat-flat-button class="target-button" type="submit" (click)="noteSubmit()">Close</button>
+      </div>
+    </form>
+    </div>
+    </ng-template>
+  </div>

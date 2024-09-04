@@ -1,0 +1,89 @@
+.todo-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  input[type='text'] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  button {
+    padding: 8px 12px;
+    margin-left: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: brown;
+  }
+  .completed {
+    text-decoration: line-through;
+    color: #888;
+  }
+ 
+  
+.dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Gradient background */
+    color: white;
+  }
+  
+  .dashboard-header {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent header background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent content background */
+    border-radius: 15px;
+    margin: 20px;
+    backdrop-filter: blur(10px); /* Blurred background effect */
+  }
+  .completed-task{
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+

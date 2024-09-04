@@ -1,0 +1,9 @@
+
+<ng-container  *ngIf="notesArray.length<=0">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <p style="font-size: 1.5rem; color: rgba(128, 128, 128, 0.475);">Your archived notes appear here</p>
+
+    <p class="material-symbols-outlined" style="font-size: 8rem; color: rgba(128, 128, 128, 0.313);">archive</p>
+</div>
+</ng-container>
+<app-getall-notes [notesList]="notesArray" (refreshNotes)="refreshNotes()"></app-getall-notes>

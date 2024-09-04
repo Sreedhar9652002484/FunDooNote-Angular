@@ -1,0 +1,40 @@
+
+.allnotes{
+    width: 23vw;
+    padding: 10px 10px 0px 10px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.445);
+}
+.material-symbols-outlined{
+    color: gray;
+    cursor: pointer;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center; 
+}
+.custom-dialog-container {
+    backdrop-filter: blur(6px); /* Apply blur effect to the background */
+  }
+
+/* Hide icons by default */
+.icons-container {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Show icons when the mat-card is hovered */
+  mat-card:hover .icons-container {
+    opacity: 1;
+
+  }
+  mat-card:hover{
+    box-shadow:  3px  2px  rgba(128, 128, 128, 0.306);
+  }

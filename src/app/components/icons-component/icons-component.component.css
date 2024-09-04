@@ -1,0 +1,28 @@
+.takenote-icons2{
+    display: flex;
+}
+.material-symbols-outlined{
+    /* color: gray; */
+    font-size: 1.2rem;
+}
+
+.palette-menu .color-icons {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+  }
+  
+  .colorIcon {
+    margin-left: 4px;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: border 0.2s ease-in-out;
+  }
+  
+  .colorIcon:hover {
+    border: 2px solid black; /* Black border on hover */
+  }
+  
